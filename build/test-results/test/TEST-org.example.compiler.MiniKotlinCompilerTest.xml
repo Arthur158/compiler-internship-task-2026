@@ -1,24 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.compiler.MiniKotlinCompilerTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2026-03-09T12:35:45.335Z" hostname="fedora" time="0.219">
+<testsuite name="org.example.compiler.MiniKotlinCompilerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-03-09T12:38:34.847Z" hostname="fedora" time="0.249">
   <properties/>
-  <testcase name="compile example_mini outputs 120 and 15()" classname="org.example.compiler.MiniKotlinCompilerTest" time="0.219">
-    <failure message="org.opentest4j.AssertionFailedError: Expected value to be of type &lt;org.example.compiler.CompilationResult$Success (Kotlin reflection is not available)&gt;, actual &lt;class org.example.compiler.CompilationResult$Failure (Kotlin reflection is not available)&gt;." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Expected value to be of type &lt;org.example.compiler.CompilationResult$Success (Kotlin reflection is not available)&gt;, actual &lt;class org.example.compiler.CompilationResult$Failure (Kotlin reflection is not available)&gt;.
-	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at app//org.junit.jupiter.api.Assertions.fail(Assertions.java:138)
-	at app//kotlin.test.junit5.JUnit5Asserter.fail(JUnitSupport.kt:56)
-	at app//kotlin.test.Asserter.assertTrue(Assertions.kt:765)
-	at app//kotlin.test.junit5.JUnit5Asserter.assertTrue(JUnitSupport.kt:30)
-	at app//kotlin.test.AssertionsKt__AssertionsKt.assertIsOfType(Assertions.kt:122)
-	at app//kotlin.test.AssertionsKt.assertIsOfType(Unknown Source)
-	at app//org.example.compiler.MiniKotlinCompilerTest.compile example_mini outputs 120 and 15(MiniKotlinCompilerTest.kt:66)
-	at java.base@17.0.18/java.lang.reflect.Method.invoke(Method.java:569)
-	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
-</failure>
-  </testcase>
+  <testcase name="compile example_mini outputs 120 and 15()" classname="org.example.compiler.MiniKotlinCompilerTest" time="0.249"/>
   <system-out><![CDATA[program:[[30], [30], <EOF>]
             public class MiniProgram {
-                public static void factorial(int n, Continuation<int> __continuation) {
+                public static void factorial(Integer n, Continuation<Integer> __continuation) {
     if ((n <= 1)) {
         __continuation.accept(1);
         return;
@@ -31,10 +17,10 @@
 }
 public static void main(String[] args) {
     factorial(5, (arg2) -> {
-        int result = arg2;
+        Integer result = arg2;
         Prelude.println(result, (arg1) -> {
-            int a = (10 + 5);
-            bool b = (a > 10);
+            Integer a = (10 + 5);
+            Boolean b = (a > 10);
             Prelude.println(a, (arg0) -> {
     
             });
@@ -43,12 +29,10 @@ public static void main(String[] args) {
 }
 
             }
-Failure(errors=[CompilationError(line=2, column=66, message=unexpected type
-  required: reference
-  found:    int), CompilationError(line=18, column=13, message=cannot find symbol
-  symbol:   class bool
-  location: class MiniProgram)])
-null
+Success(className=MiniProgram, classLoader=java.net.URLClassLoader@6a1d204a, compiledClass=class MiniProgram)
+Success(stdout=120
+15
+, stderr=)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

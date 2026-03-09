@@ -250,11 +250,10 @@ class MiniKotlinCompiler : MiniKotlinBaseVisitor<String>() {
     }
 
     fun compileType(type: P.TypeContext): String {
-        if (type.INT_TYPE() != null)return "int"
+        if (type.INT_TYPE() != null)return "Integer"
         if (type.STRING_TYPE() != null)return "String"
         if (type.UNIT_TYPE() != null)return "void"
-        if (type.BOOLEAN_TYPE() != null)return "bool"
+        if (type.BOOLEAN_TYPE() != null)return "Boolean"
         return ""
     }
-
 }
