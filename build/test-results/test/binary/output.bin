@@ -1,24 +1,0 @@
-'            public class MiniProgram {
-^                public static void doublef(Integer n, Continuation<Integer> __continuation) {
-$    __continuation.accept((n * 2));
-    return;
-}
-Npublic static void triplef(Integer n, Continuation<Integer> __continuation) {
-$    __continuation.accept((n * 3));
-    return;
-}
-)public static void main(String[] args) {
-    doublef(4, (arg1) -> {
-        triplef(3, (arg2) -> {
-,            Integer result = (arg1 + arg2);
-0            Prelude.println(result, (arg0) -> {
-    
-            });
-        });
-    });
-}
-
-            }
-nSuccess(className=MiniProgram, classLoader=java.net.URLClassLoader@52eacb4b, compiledClass=class MiniProgram)
-Success(stdout=17
-, stderr=)

@@ -6164,3 +6164,59 @@ WARNING: Unmatched cancel notification for request id 623
 2026.03.09 13:45:29 INFO  Memory monitor stopped[0m
 2026.03.09 13:45:29 INFO  shutting down Metals[0m
 2026.03.09 13:45:29 INFO  Shut down connection with build server.[0m
+2026.03.09 14:00:20 INFO  Started: Metals version 1.6.5 in folders '/home/arthurj/github/compiler-internship-task-2026' for client Neovim 0.11.5.[0m
+2026.03.09 14:00:20 INFO  Memory monitor started[0m
+2026.03.09 14:00:20 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.[0m
+2026.03.09 14:00:20 INFO  no build target found for /home/arthurj/github/compiler-internship-task-2026/src/main/antlr/gen/MiniKotlinParser.java. Using fallback presentation compiler.[0m
+2026.03.09 14:00:21 INFO  Attempting to connect to the build server...[0m
+2026.03.09 14:00:20 INFO  no build target found for /home/arthurj/github/compiler-internship-task-2026/src/main/antlr/gen/MiniKotlinParser.java. Using fallback presentation compiler.[0m
+2026.03.09 14:00:21 INFO  Found a Bloop server running[0m
+2026.03.09 14:00:21 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/arthurj/github/compiler-internship-task-2026/.metals/bsp.trace.json or /home/arthurj/.cache/metals/bsp.trace.json[0m
+2026.03.09 14:00:21 INFO  time: Connected to build server in 0.22s[0m
+2026.03.09 14:00:21 INFO  Connected to Build server: Bloop v2.0.18[0m
+2026.03.09 14:00:22 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-21-openjdk/src.zip, /usr/lib/jvm/java-21-openjdk/lib/src.zip, /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-21-openjdk/src.zip, /usr/lib/jvm/java-21-openjdk/lib/src.zip. Java symbols will not be available.[0m
+2026.03.09 14:00:22 INFO  time: indexed workspace in 1.76s[0m
+2026.03.09 14:00:23 WARN  no build target for: /home/arthurj/github/compiler-internship-task-2026/src/main/antlr/gen/MiniKotlinParser.java[0m
+2026.03.09 14:00:23 WARN  no build target for: /home/arthurj/github/compiler-internship-task-2026/src/main/antlr/gen/MiniKotlinParser.java[0m
+Mar 09, 2026 3:24:18 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4
+2026.03.09 15:24:22 INFO  compiling stdlib (1 java source)[0m
+2026.03.09 15:24:22 WARN  Invalid text document uri received from build server: file:///home/arthurj/.local/share/scalacli/bloop/warning:%5Boptions%5D%20system%20modules%20path%20not%20set%20in%20conjunction%20with%20-source%2017%0A/home/arthurj/github/compiler-internship-task-2026/stdlib/src/main/java/Prelude.java[0m
+2026.03.09 15:24:22 INFO  BSP server:  error: class Ref is public, should be declared in a file named Ref.java[0m
+2026.03.09 15:24:22 WARN  javac exited with exit code 1[0m
+2026.03.09 15:24:22 INFO  time: compiled stdlib in 0.39s[0m
+2026.03.09 15:24:24 WARN  Invalid text document uri received from build server: file:///home/arthurj/.local/share/scalacli/bloop/warning:%5Boptions%5D%20system%20modules%20path%20not%20set%20in%20conjunction%20with%20-source%2017%0A/home/arthurj/github/compiler-internship-task-2026/stdlib/src/main/java/Prelude.java[0m
+2026.03.09 15:24:58 INFO  compiling stdlib (1 java source)[0m
+2026.03.09 15:24:58 INFO  Created report: Optional[file:///home/arthurj/github/compiler-internship-task-2026/stdlib/src/main/java/Ref.java][0m
+2026.03.09 15:24:58 INFO  QDox parse error in file:///home/arthurj/github/compiler-internship-task-2026/stdlib/src/main/java/Ref.java (full report at: "/home/arthurj/github/compiler-internship-task-2026/.metals/.reports/metals-full/2026-03-09/r_qdox-error_(stdlib)_15-24-58-883.md")[0m
+Mar 09, 2026 3:24:59 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 13
+2026.03.09 15:24:58 WARN  javac: [options] system modules path not set in conjunction with -source 17[0m
+2026.03.09 15:24:58 INFO  time: compiled stdlib in 0.29s[0m
+2026.03.09 15:24:58 INFO  compiling stdlib (1 java source)[0m
+2026.03.09 15:24:58 WARN  javac: [options] system modules path not set in conjunction with -source 17[0m
+2026.03.09 15:24:58 INFO  time: compiled stdlib in 0.33s[0m
+2026.03.09 15:49:11 INFO  Created report: Optional[file:///home/arthurj/github/compiler-internship-task-2026/stdlib/src/main/java/Loop.java][0m
+2026.03.09 15:49:11 INFO  QDox parse error in file:///home/arthurj/github/compiler-internship-task-2026/stdlib/src/main/java/Loop.java (full report at: "/home/arthurj/github/compiler-internship-task-2026/.metals/.reports/metals-full/2026-03-09/r_qdox-error_(stdlib)_15-49-11-318.md")[0m
+2026.03.09 15:49:11 INFO  compiling stdlib (3 java sources)[0m
+2026.03.09 15:49:11 WARN  javac: [options] system modules path not set in conjunction with -source 17[0m
+2026.03.09 15:49:11 INFO  time: compiled stdlib in 0.36s[0m
+Mar 09, 2026 3:49:11 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 19
+2026.03.09 15:49:11 INFO  compiling stdlib (1 java source)[0m
+2026.03.09 15:49:12 WARN  javac: [options] system modules path not set in conjunction with -source 17[0m
+2026.03.09 15:49:12 INFO  time: compiled stdlib in 0.31s[0m
+2026.03.09 15:51:18 INFO  no build target found for /home/arthurj/github/compiler-internship-task-2026/src/main/antlr/gen/MiniKotlinParser.java. Using fallback presentation compiler.[0m
+2026.03.09 15:51:18 WARN  no build target for: /home/arthurj/github/compiler-internship-task-2026/src/main/antlr/gen/MiniKotlinParser.java[0m
+Mar 09, 2026 3:51:18 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 23
+2026.03.09 15:51:18 INFO  no build target found for /home/arthurj/github/compiler-internship-task-2026/src/main/antlr/gen/MiniKotlinParser.java. Using fallback presentation compiler.[0m
+2026.03.09 15:51:58 INFO  no build target found for /home/arthurj/github/compiler-internship-task-2026/src/main/antlr/gen/MiniKotlinParser.java. Using fallback presentation compiler.[0m
+2026.03.09 15:51:58 WARN  no build target for: /home/arthurj/github/compiler-internship-task-2026/src/main/antlr/gen/MiniKotlinParser.java[0m
+Mar 09, 2026 3:51:58 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 25
+2026.03.09 15:51:58 INFO  no build target found for /home/arthurj/github/compiler-internship-task-2026/src/main/antlr/gen/MiniKotlinParser.java. Using fallback presentation compiler.[0m
+Mar 09, 2026 3:55:18 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 27
+Mar 09, 2026 3:55:20 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 29

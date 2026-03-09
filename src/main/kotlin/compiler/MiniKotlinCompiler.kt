@@ -3,11 +3,22 @@ package org.example.compiler
 import MiniKotlinBaseVisitor
 import MiniKotlinParser as P
 
+/**
+ * Compiles MiniKotlin AST to Java source code in CPS.
+ */
 class MiniKotlinCompiler : MiniKotlinBaseVisitor<String>() {
 
+    /**
+     * Counter for generating unique argument names (arg0, arg1, ...) for
+     * continuation lambdas. Reset per function to keep names short.
+     */
     private var argCounter = 0
     private fun freshArg() = "arg${argCounter++}"
 
+    /**
+     * Entry point. Compiles a full MiniKotlin program to a Java class.
+     * Each MiniKotlin function becomes a public static method.
+     */
     fun compile(program: P.ProgramContext, className: String = "MiniProgram"): String {
         var functions = ""
         for (func in program.functionDeclaration()) {
@@ -20,7 +31,12 @@ class MiniKotlinCompiler : MiniKotlinBaseVisitor<String>() {
         """.trimIndent()
     }
 
-
+    /**
+     * Compiles a single function declaration to a Java static method.
+     *
+     * All functions except main get an extra Continuation<T> parameter appended.
+     * The continuation receives the function's return value instead of a return statement.
+     */
     fun compileFunction(function: P.FunctionDeclarationContext): String {
         argCounter = 0
         val name = function.IDENTIFIER().text
@@ -30,6 +46,7 @@ class MiniKotlinCompiler : MiniKotlinBaseVisitor<String>() {
             compileParams(function.parameterList().parameter()) + ", "
         else ""
 
+        // main is special: it keeps the standard Java signature and has no continuation
         val (sigParams, contParam) = if (name == "main")
             Pair("String[] args", "")
         else
@@ -44,17 +61,27 @@ class MiniKotlinCompiler : MiniKotlinBaseVisitor<String>() {
         """.trimMargin()
     }
 
+    /**
+     * Compiles a list of statements as a continuation chain.
+     */
     fun compileBlock(stmts: List<P.StatementContext>, outerCont: String?): String {
         if (stmts.isEmpty()) return outerCont ?: ""
         return compileStmt(stmts[0], stmts.subList(1, stmts.size), outerCont)
     }
 
+    /**
+     * Compiles a single statement, threading the remaining statements ([rest]) and
+     * [outerCont] as the continuation.
+     * CPS is done by wrapping the follwing statements inside a continuation body
+     */
     fun compileStmt(
         stmt: P.StatementContext,
         rest: List<P.StatementContext>,
         outerCont: String?
     ): String {
-        // --- var declaration ---
+        // --- var x: T = expr ---
+        // Evaluate expr in CPS, then declare the variable and continue with the rest.
+        // If expr contains a function call, the declaration happens inside the callback.
         if (stmt.variableDeclaration() != null) {
             val decl = stmt.variableDeclaration()
             val varName = decl.IDENTIFIER().text
@@ -67,7 +94,8 @@ class MiniKotlinCompiler : MiniKotlinBaseVisitor<String>() {
             }
         }
 
-        // --- var assignment ---
+        // --- x = expr ---
+        // Evaluate expr in CPS, then emit the assignment and continue.
         if (stmt.variableAssignment() != null) {
             val assign = stmt.variableAssignment()
             val varName = assign.IDENTIFIER().text
@@ -79,14 +107,12 @@ class MiniKotlinCompiler : MiniKotlinBaseVisitor<String>() {
             }
         }
 
+        // Evaluate the condition in CPS, then emit both branches.
+        // The rest of the block (restCode) is inlined into both branches since
+        // Java has no way to "jump to" a shared continuation without a named method.
         if (stmt.ifStatement() != null) {
             val ifStmt = stmt.ifStatement()
             val condExpr = ifStmt.expression()
-
-            // The "rest" of the block after this if is the shared continuation.
-            // We materialise it as an inline lambda only if needed, or just inline it.
-            // For simplicity we inline the rest into both branches (code duplication
-            // is acceptable for a student CPS compiler; the alternative is a let-binding).
             val restCode = compileBlock(rest, outerCont)
 
             return compileExprCPS(condExpr) { condVal ->
@@ -108,13 +134,12 @@ class MiniKotlinCompiler : MiniKotlinBaseVisitor<String>() {
             }
         }
 
+        // Note: This only works with simple while loops that do not contain function calls
         if (stmt.whileStatement() != null) {
             val wStmt = stmt.whileStatement()
             val condExpr = wStmt.expression()
             val restCode = compileBlock(rest, outerCont)
 
-            // While loops are kept as direct Java while loops (CPS of loops would
-            // require trampolining which is beyond scope; the task example doesn't show it).
             return compileExprCPS(condExpr) { condVal ->
                 val bodyCode = compileBlock(wStmt.block().statement(), outerCont = null)
                 buildString {
@@ -126,7 +151,9 @@ class MiniKotlinCompiler : MiniKotlinBaseVisitor<String>() {
             }
         }
 
-
+        // --- return expr ---
+        // In CPS, return means "pass the value to the continuation" rather than
+        // returning it on the call stack. We also emit a real return to stop execution.
         if (stmt.returnStatement() != null) {
             val retStmt = stmt.returnStatement()
             return if (retStmt.expression() != null) {
@@ -138,18 +165,23 @@ class MiniKotlinCompiler : MiniKotlinBaseVisitor<String>() {
             }
         }
 
+        // Evaluate in CPS (which emits the call), then continue with the rest.
+        // The result value is discarded.
         if (stmt.expression() != null) {
             val restCode = compileBlock(rest, outerCont)
-            return compileExprCPS(stmt.expression()) { value ->
+            return compileExprCPS(stmt.expression()) { _ ->
                 restCode
             }
         }
+
         return "unhandled"
     }
 
+    /**
+     * Compiles an expression in CPS by invoking [k] with the value string.
+     */
     fun compileExprCPS(expr: P.ExpressionContext, k: (String) -> String): String {
         return when (expr) {
-            // ---- binary/unary pure expressions --------------------------------
             is P.AndExprContext -> compileBinPureCPS(expr.expression(0), expr.expression(1), "&&", k)
             is P.OrExprContext  -> compileBinPureCPS(expr.expression(0), expr.expression(1), "||", k)
             is P.NotExprContext -> compileExprCPS(expr.expression()) { v -> k("!$v") }
@@ -193,24 +225,25 @@ class MiniKotlinCompiler : MiniKotlinBaseVisitor<String>() {
                 compileBinPureCPS(expr.expression(0), expr.expression(1), op, k)
             }
 
-            // ---- function call  (the interesting CPS case) -------------------
+            // Function calls are the only non-pure expressions.
+            // Arguments are evaluated left-to-right in CPS before the call is emitted.
+            // The continuation lambda receives the return value as a fresh arg variable.
             is P.FunctionCallExprContext -> {
                 val funcName = expr.IDENTIFIER().text
                 val args = expr.argumentList()?.expression() ?: emptyList()
 
-                // Compile each argument left-to-right, collecting their values,
-                // then emit the CPS call.
                 compileArgListCPS(args) { argVals ->
                     val arg = freshArg()
                     val contBody = k(arg).prependIndent("    ")
-                    // Special-case: map MiniKotlin println -> Prelude.println
+                    // println is not a MiniKotlin builtin — map it to Prelude.println
                     val javaName = if (funcName == "println") "Prelude.println" else funcName
                     val argStr = if (argVals.isEmpty()) "" else argVals.joinToString(", ") + ", "
                     "$javaName(${argStr}($arg) -> {\n$contBody\n});"
                 }
             }
 
-            // ---- primary (always pure) ---------------------------------------
+            // Parenthesised expressions are transparent — just unwrap and continue.
+            // Other primaries (literals, identifiers) are always pure.
             is P.PrimaryExprContext -> when (val p = expr.primary()) {
                 is P.ParenExprContext -> compileExprCPS(p.expression(), k)
                 else -> k(compilePrimary(p))
@@ -220,7 +253,10 @@ class MiniKotlinCompiler : MiniKotlinBaseVisitor<String>() {
         }
     }
 
-    /** Compile a pure binary expression: evaluate lhs then rhs, combine. */
+    /**
+     * Compiles a binary expression where both operands are pure (no side effects
+     * that require sequencing beyond left-to-right evaluation).
+     */
     private fun compileBinPureCPS(
         lhs: P.ExpressionContext,
         rhs: P.ExpressionContext,
@@ -233,8 +269,8 @@ class MiniKotlinCompiler : MiniKotlinBaseVisitor<String>() {
     }
 
     /**
-     * Compile a list of argument expressions left-to-right, collecting values,
-     * then call [k] with the full list of value strings.
+     * Evaluates a list of argument expressions left-to-right in CPS,
+     * collecting their value strings, then passes the full list to [k].
      */
     private fun compileArgListCPS(
         args: List<P.ExpressionContext>,
@@ -253,6 +289,7 @@ class MiniKotlinCompiler : MiniKotlinBaseVisitor<String>() {
         }
     }
 
+    /** Compiles a primary (leaf) expression to a plain Java expression string. */
     fun compilePrimary(primary: P.PrimaryContext): String = when (primary) {
         is P.IntLiteralContext     -> primary.INTEGER_LITERAL().text
         is P.StringLiteralContext  -> primary.STRING_LITERAL().text
@@ -261,18 +298,19 @@ class MiniKotlinCompiler : MiniKotlinBaseVisitor<String>() {
         else -> error("Unknown primary: $primary")
     }
 
-
+    /** Compiles a parameter list to a Java parameter string: "Integer a, String b" */
     fun compileParams(params: List<P.ParameterContext>): String {
         return params.joinToString(", ") { param ->
             compileType(param.type()) + " " + param.IDENTIFIER().text
         }
     }
 
+    /** Maps MiniKotlin types to their boxed Java equivalents (needed for generics). */
     fun compileType(type: P.TypeContext): String {
-        if (type.INT_TYPE() != null)return "Integer"
-        if (type.STRING_TYPE() != null)return "String"
-        if (type.UNIT_TYPE() != null)return "void"
-        if (type.BOOLEAN_TYPE() != null)return "Boolean"
+        if (type.INT_TYPE() != null) return "Integer"
+        if (type.STRING_TYPE() != null) return "String"
+        if (type.UNIT_TYPE() != null) return "void"
+        if (type.BOOLEAN_TYPE() != null) return "Boolean"
         return ""
     }
 }
