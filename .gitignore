@@ -4,6 +4,22 @@
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+# Build output
+build/
+
+# Bloop (Scala build server, used by Metals)
+.bloop/
+
+# Metals (Scala/Kotlin LSP)
+.metals/
+metals.sbt
+
+# IntelliJ
+.idea/
+
+# Kotlin LSP database
+kls_database.db
+
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml

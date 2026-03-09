@@ -1,0 +1,12 @@
+fun doublef(n: Int): Int {
+    return n * 2
+}
+
+fun triplef(n: Int): Int {
+    return n * 3
+}
+
+fun main(): Unit {
+    var result: Int = doublef(4) + triplef(3)
+    println(result)
+}

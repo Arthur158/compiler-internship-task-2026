@@ -108,6 +108,25 @@ class MiniKotlinCompiler : MiniKotlinBaseVisitor<String>() {
             }
         }
 
+        if (stmt.whileStatement() != null) {
+            val wStmt = stmt.whileStatement()
+            val condExpr = wStmt.expression()
+            val restCode = compileBlock(rest, outerCont)
+
+            // While loops are kept as direct Java while loops (CPS of loops would
+            // require trampolining which is beyond scope; the task example doesn't show it).
+            return compileExprCPS(condExpr) { condVal ->
+                val bodyCode = compileBlock(wStmt.block().statement(), outerCont = null)
+                buildString {
+                    append("while ($condVal) {\n")
+                    append(bodyCode.prependIndent("    "))
+                    append("\n}\n")
+                    append(restCode)
+                }
+            }
+        }
+
+
         if (stmt.returnStatement() != null) {
             val retStmt = stmt.returnStatement()
             return if (retStmt.expression() != null) {

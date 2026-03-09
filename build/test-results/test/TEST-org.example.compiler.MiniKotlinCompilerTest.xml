@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.compiler.MiniKotlinCompilerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-03-09T12:38:34.847Z" hostname="fedora" time="0.249">
+<testsuite name="org.example.compiler.MiniKotlinCompilerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-03-09T12:54:15.285Z" hostname="fedora" time="0.302">
   <properties/>
-  <testcase name="compile example_mini outputs 120 and 15()" classname="org.example.compiler.MiniKotlinCompilerTest" time="0.249"/>
-  <system-out><![CDATA[program:[[30], [30], <EOF>]
-            public class MiniProgram {
-                public static void factorial(Integer n, Continuation<Integer> __continuation) {
-    if ((n <= 1)) {
-        __continuation.accept(1);
-        return;
-    } else {
-        factorial((n - 1), (arg0) -> {
-            __continuation.accept((n * arg0));
-            return;
-        });
-    }
+  <testcase name="compile loop_test_mini outputs 55()" classname="org.example.compiler.MiniKotlinCompilerTest" time="0.23"/>
+  <testcase name="compile call_in_expr_mini outputs 17()" classname="org.example.compiler.MiniKotlinCompilerTest" time="0.034"/>
+  <testcase name="compile example_mini outputs 120 and 15()" classname="org.example.compiler.MiniKotlinCompilerTest" time="0.037"/>
+  <system-out><![CDATA[            public class MiniProgram {
+                public static void doublef(Integer n, Continuation<Integer> __continuation) {
+    __continuation.accept((n * 2));
+    return;
+}
+public static void triplef(Integer n, Continuation<Integer> __continuation) {
+    __continuation.accept((n * 3));
+    return;
 }
 public static void main(String[] args) {
-    factorial(5, (arg2) -> {
-        Integer result = arg2;
-        Prelude.println(result, (arg1) -> {
-            Integer a = (10 + 5);
-            Boolean b = (a > 10);
-            Prelude.println(a, (arg0) -> {
+    doublef(4, (arg1) -> {
+        triplef(3, (arg2) -> {
+            Integer result = (arg1 + arg2);
+            Prelude.println(result, (arg0) -> {
     
             });
         });
@@ -29,9 +25,8 @@ public static void main(String[] args) {
 }
 
             }
-Success(className=MiniProgram, classLoader=java.net.URLClassLoader@6a1d204a, compiledClass=class MiniProgram)
-Success(stdout=120
-15
+Success(className=MiniProgram, classLoader=java.net.URLClassLoader@52eacb4b, compiledClass=class MiniProgram)
+Success(stdout=17
 , stderr=)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

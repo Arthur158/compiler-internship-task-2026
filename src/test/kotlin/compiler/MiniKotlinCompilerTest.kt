@@ -49,10 +49,7 @@ class MiniKotlinCompilerTest {
         val program = parseFile(examplePath)
 
         val compiler = MiniKotlinCompiler()
-        println("program:" + program.children)
         val javaCode = compiler.compile(program)
-
-        println(javaCode)
 
         val javaFile = tempDir.resolve("MiniProgram.java")
         Files.writeString(javaFile, javaCode)
@@ -61,13 +58,53 @@ class MiniKotlinCompilerTest {
         val stdlibPath = resolveStdlibPath()
         val (compilationResult, executionResult) = javaCompiler.compileAndExecute(javaFile, stdlibPath)
 
-        println(compilationResult)
-        println(executionResult)
         assertIs<CompilationResult.Success>(compilationResult)
         assertIs<ExecutionResult.Success>(executionResult)
 
         val output = executionResult.stdout
         assertTrue(output.contains("120"), "Expected output to contain factorial result 120, but got: $output")
         assertTrue(output.contains("15"), "Expected output to contain arithmetic result 15, but got: $output")
+    }
+    @Test
+    fun `compile loop_test_mini outputs 55`() {
+        val path = Paths.get("samples/loop.mini")
+        val program = parseFile(path)
+        val compiler = MiniKotlinCompiler()
+        val javaCode = compiler.compile(program)
+
+        val javaFile = tempDir.resolve("MiniProgram.java")
+        Files.writeString(javaFile, javaCode)
+        val javaCompiler = JavaRuntimeCompiler()
+        val stdlibPath = resolveStdlibPath()
+        val (compilationResult, executionResult) = javaCompiler.compileAndExecute(javaFile, stdlibPath)
+
+
+        assertIs<CompilationResult.Success>(compilationResult)
+        assertIs<ExecutionResult.Success>(executionResult)
+        val output = executionResult.stdout
+        assertTrue(output.contains("55"), "Expected output to contain 55, but got: $output")
+    }
+
+    @Test
+    fun `compile call_in_expr_mini outputs 17`() {
+        val path = Paths.get("samples/funccall.mini")
+        val program = parseFile(path)
+        val compiler = MiniKotlinCompiler()
+        val javaCode = compiler.compile(program)
+        println(javaCode)
+
+        val javaFile = tempDir.resolve("MiniProgram.java")
+        Files.writeString(javaFile, javaCode)
+        val javaCompiler = JavaRuntimeCompiler()
+        val stdlibPath = resolveStdlibPath()
+        val (compilationResult, executionResult) = javaCompiler.compileAndExecute(javaFile, stdlibPath)
+
+        println(compilationResult)
+        println(executionResult)
+
+        assertIs<CompilationResult.Success>(compilationResult)
+        assertIs<ExecutionResult.Success>(executionResult)
+        val output = executionResult.stdout
+        assertTrue(output.contains("17"), "Expected output to contain 17, but got: $output")
     }
 }
