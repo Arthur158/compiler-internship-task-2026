@@ -1,0 +1,687 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "untitled13",
+        "directory": "/home/arthurj/github/compiler-internship-task-2026",
+        "workspaceDir": "/home/arthurj/github/compiler-internship-task-2026",
+        "sources": [
+            "/home/arthurj/github/compiler-internship-task-2026/build/generated-src/antlr/main",
+            "/home/arthurj/github/compiler-internship-task-2026/src/main/kotlin",
+            "/home/arthurj/github/compiler-internship-task-2026/src/main/java"
+        ],
+        "dependencies": [
+            "stdlib"
+        ],
+        "classpath": [
+            "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4/4.13.1/71b8e3e31b0821480a5db1486012caa89e673f41/antlr4-4.13.1.jar",
+            "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.3.0/ebc4eb2b6e6c91b6c844c1e3183920d86f2ef656/kotlin-stdlib-2.3.0.jar",
+            "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4-runtime/4.13.1/17125bae1d965624e265ef49552f6465a2bfa307/antlr4-runtime-4.13.1.jar",
+            "/home/arthurj/github/compiler-internship-task-2026/.bloop/stdlib/build/classes",
+            "/home/arthurj/github/compiler-internship-task-2026/stdlib/src/main/resources",
+            "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.antlr/ST4/4.3.4/bf68d049dd4e6e104055a79ac3bf9e6307d29258/ST4-4.3.4.jar",
+            "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.antlr/antlr-runtime/3.5.3/9011fb189c5ed6d99e5f3322514848d1ec1e1416/antlr-runtime-3.5.3.jar",
+            "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.abego.treelayout/org.abego.treelayout.core/1.0.3/457216e8e6578099ae63667bb1e4439235892028/org.abego.treelayout.core-1.0.3.jar",
+            "/home/arthurj/.gradle/caches/modules-2/files-2.1/com.ibm.icu/icu4j/72.1/bc9057df4b5efddf7f6d1880bf7f3399f4ce5633/icu4j-72.1.jar",
+            "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar"
+        ],
+        "out": "/home/arthurj/github/compiler-internship-task-2026/.bloop/untitled13/build",
+        "classesDir": "/home/arthurj/github/compiler-internship-task-2026/.bloop/untitled13/build/classes",
+        "resources": [
+            "/home/arthurj/github/compiler-internship-task-2026/src/main/resources"
+        ],
+        "java": {
+            "options": [
+                "-target",
+                "17",
+                "-source",
+                "17",
+                "-h",
+                "/home/arthurj/github/compiler-internship-task-2026/build/generated/sources/headers/java/main",
+                "-g",
+                "-sourcepath",
+                "",
+                "-proc:none",
+                "-XDuseUnsharedTable=true"
+            ]
+        },
+        "platform": {
+            "name": "jvm",
+            "config": {
+                "home": "/usr/lib/jvm/java-21-openjdk",
+                "options": [
+                    
+                ]
+            },
+            "mainClass": [
+                "org.example.MainKt"
+            ],
+            "classpath": [
+                "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4/4.13.1/71b8e3e31b0821480a5db1486012caa89e673f41/antlr4-4.13.1.jar",
+                "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.3.0/ebc4eb2b6e6c91b6c844c1e3183920d86f2ef656/kotlin-stdlib-2.3.0.jar",
+                "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4-runtime/4.13.1/17125bae1d965624e265ef49552f6465a2bfa307/antlr4-runtime-4.13.1.jar",
+                "/home/arthurj/github/compiler-internship-task-2026/.bloop/stdlib/build/classes",
+                "/home/arthurj/github/compiler-internship-task-2026/stdlib/src/main/resources",
+                "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.antlr/ST4/4.3.4/bf68d049dd4e6e104055a79ac3bf9e6307d29258/ST4-4.3.4.jar",
+                "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.antlr/antlr-runtime/3.5.3/9011fb189c5ed6d99e5f3322514848d1ec1e1416/antlr-runtime-3.5.3.jar",
+                "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.abego.treelayout/org.abego.treelayout.core/1.0.3/457216e8e6578099ae63667bb1e4439235892028/org.abego.treelayout.core-1.0.3.jar",
+                "/home/arthurj/.gradle/caches/modules-2/files-2.1/com.ibm.icu/icu4j/72.1/bc9057df4b5efddf7f6d1880bf7f3399f4ce5633/icu4j-72.1.jar",
+                "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar"
+            ]
+        },
+        "resolution": {
+            "modules": [
+                {
+                    "organization": "org.jetbrains.kotlinx",
+                    "name": "kotlinx-coroutines-core-jvm",
+                    "version": "1.8.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlinx-coroutines-core-jvm",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.8.0/37cb5fe79f895c0900ab9422b14ac91b7b3b37b/kotlinx-coroutines-core-jvm-1.8.0-sources.jar"
+                        },
+                        {
+                            "name": "kotlinx-coroutines-core-jvm",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.8.0/ac1dc37a30a93150b704022f8d895ee1bd3a36b3/kotlinx-coroutines-core-jvm-1.8.0.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-test-junit5",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-test-junit5",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test-junit5/2.3.0/f58a4a3ae0df442a5d57f489162620bb53d32656/kotlin-test-junit5-2.3.0.jar"
+                        },
+                        {
+                            "name": "kotlin-test-junit5",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test-junit5/2.3.0/2efccc5bddf40f42d3a2ad787430e2e419821ad/kotlin-test-junit5-2.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-scripting-jvm",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-scripting-jvm",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-jvm/2.3.0/ba43e136497851b3079ebcc4b0f9c462c1410eab/kotlin-scripting-jvm-2.3.0.jar"
+                        },
+                        {
+                            "name": "kotlin-scripting-jvm",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-jvm/2.3.0/9f8b466128490859cc039034d8d45d2ec27d59e2/kotlin-scripting-jvm-2.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.junit.platform",
+                    "name": "junit-platform-engine",
+                    "version": "1.10.1",
+                    "artifacts": [
+                        {
+                            "name": "junit-platform-engine",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-engine/1.10.1/f32ae4af74fde68414b8a3d2b7cf1fb43824a83a/junit-platform-engine-1.10.1.jar"
+                        },
+                        {
+                            "name": "junit-platform-engine",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-engine/1.10.1/886c197f5fcfe9eaf0d1dde20aa1bd3abd653f44/junit-platform-engine-1.10.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.junit.jupiter",
+                    "name": "junit-jupiter-api",
+                    "version": "5.10.1",
+                    "artifacts": [
+                        {
+                            "name": "junit-jupiter-api",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.10.1/eb90c7d8bfaae8fdc97b225733fcb595ddd72843/junit-jupiter-api-5.10.1.jar"
+                        },
+                        {
+                            "name": "junit-jupiter-api",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.10.1/b281dbb5921ce56b37b6e07a2502f663ca6c8db6/junit-jupiter-api-5.10.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "io.github.java-diff-utils",
+                    "name": "java-diff-utils",
+                    "version": "4.12",
+                    "artifacts": [
+                        {
+                            "name": "java-diff-utils",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/io.github.java-diff-utils/java-diff-utils/4.12/175dac5f6daecef7444f24e581a42c48707baa1d/java-diff-utils-4.12-sources.jar"
+                        },
+                        {
+                            "name": "java-diff-utils",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/io.github.java-diff-utils/java-diff-utils/4.12/1a712a91324d566eef39817fc5c9980eb10c21db/java-diff-utils-4.12.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-script-runtime",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-script-runtime",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/2.3.0/fb89e0ab064ea19d08c6d6bc9f044d16c5487fc4/kotlin-script-runtime-2.3.0.jar"
+                        },
+                        {
+                            "name": "kotlin-script-runtime",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/2.3.0/9fd152237f8e70e308db519da3e2a2f4becc7471/kotlin-script-runtime-2.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-klib-commonizer-embeddable",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-klib-commonizer-embeddable",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-klib-commonizer-embeddable/2.3.0/7f468130a7ab2a0b08aa15d97331942308411499/kotlin-klib-commonizer-embeddable-2.3.0.jar"
+                        },
+                        {
+                            "name": "kotlin-klib-commonizer-embeddable",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-klib-commonizer-embeddable/2.3.0/2ad14aed781c4a73ed4dbb421966d408a0a06686/kotlin-klib-commonizer-embeddable-2.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.antlr",
+                    "name": "antlr4-runtime",
+                    "version": "4.13.1",
+                    "artifacts": [
+                        {
+                            "name": "antlr4-runtime",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4-runtime/4.13.1/1d0a37eb12837d7c64123abc8e99e3bc8d7cfa8e/antlr4-runtime-4.13.1-sources.jar"
+                        },
+                        {
+                            "name": "antlr4-runtime",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4-runtime/4.13.1/17125bae1d965624e265ef49552f6465a2bfa307/antlr4-runtime-4.13.1.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "abi-tools-api",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "abi-tools-api",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/abi-tools-api/2.3.0/e1d96dc3a4ff4417dcb940c465e5ec284c32f315/abi-tools-api-2.3.0.jar"
+                        },
+                        {
+                            "name": "abi-tools-api",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/abi-tools-api/2.3.0/f99a76e812d7bb870b1e91cf57a40069a7fcff81/abi-tools-api-2.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-build-tools-impl",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-build-tools-impl",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-build-tools-impl/2.3.0/a7cf5ffc2cf418f9d2f9fe262daaf804e05ed14a/kotlin-build-tools-impl-2.3.0.jar"
+                        },
+                        {
+                            "name": "kotlin-build-tools-impl",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-build-tools-impl/2.3.0/1ed9cebd785e5ff11a72e0ce5e10836904bf62b2/kotlin-build-tools-impl-2.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-reflect",
+                    "version": "1.6.10",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-reflect",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.6.10/45a69749441dc0f18fe2c5b27e5e110a6be50e7/kotlin-reflect-1.6.10-sources.jar"
+                        },
+                        {
+                            "name": "kotlin-reflect",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.6.10/1cbe9c92c12a94eea200d23c2bbaedaf3daf5132/kotlin-reflect-1.6.10.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.apiguardian",
+                    "name": "apiguardian-api",
+                    "version": "1.1.2",
+                    "artifacts": [
+                        {
+                            "name": "apiguardian-api",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.apiguardian/apiguardian-api/1.1.2/e0787a997746ac32639e0bf3cb27af8dce8a3428/apiguardian-api-1.1.2-sources.jar"
+                        },
+                        {
+                            "name": "apiguardian-api",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.apiguardian/apiguardian-api/1.1.2/a231e0d844d2721b0fa1b238006d15c6ded6842a/apiguardian-api-1.1.2.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-compiler-runner",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-compiler-runner",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-runner/2.3.0/1df18e780611e4f4a6cd42a27313625464b6e01f/kotlin-compiler-runner-2.3.0.jar"
+                        },
+                        {
+                            "name": "kotlin-compiler-runner",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-runner/2.3.0/86fdf711c6de84013c76e9b44bf9f1dd642c7454/kotlin-compiler-runner-2.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-build-tools-compat",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-build-tools-compat",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-build-tools-compat/2.3.0/c9f9820625f069788e2bc644c0990760fe3c1bde/kotlin-build-tools-compat-2.3.0-sources.jar"
+                        },
+                        {
+                            "name": "kotlin-build-tools-compat",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-build-tools-compat/2.3.0/2ec7b64cf6be8512d6cccf1c92d21256a58e1443/kotlin-build-tools-compat-2.3.0.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-tooling-core",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-tooling-core",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-tooling-core/2.3.0/7a050c09910ee587944bc2a7413e2d97d751f647/kotlin-tooling-core-2.3.0.jar"
+                        },
+                        {
+                            "name": "kotlin-tooling-core",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-tooling-core/2.3.0/cdc22e14b308c524a9851794048401bfd94513d0/kotlin-tooling-core-2.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-scripting-compiler-impl-embeddable",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-scripting-compiler-impl-embeddable",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-compiler-impl-embeddable/2.3.0/12874f028b9a03573bc36da0d03a6bd95e1ba04d/kotlin-scripting-compiler-impl-embeddable-2.3.0-sources.jar"
+                        },
+                        {
+                            "name": "kotlin-scripting-compiler-impl-embeddable",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-compiler-impl-embeddable/2.3.0/d8740e4a696eea00f5f628bb267c9b32ba8ee57f/kotlin-scripting-compiler-impl-embeddable-2.3.0.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.abego.treelayout",
+                    "name": "org.abego.treelayout.core",
+                    "version": "1.0.3",
+                    "artifacts": [
+                        {
+                            "name": "org.abego.treelayout.core",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.abego.treelayout/org.abego.treelayout.core/1.0.3/98d31576a54fd48dabf1fcf67a311dd9f0e4f66e/org.abego.treelayout.core-1.0.3-sources.jar"
+                        },
+                        {
+                            "name": "org.abego.treelayout.core",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.abego.treelayout/org.abego.treelayout.core/1.0.3/457216e8e6578099ae63667bb1e4439235892028/org.abego.treelayout.core-1.0.3.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.junit.platform",
+                    "name": "junit-platform-commons",
+                    "version": "1.10.1",
+                    "artifacts": [
+                        {
+                            "name": "junit-platform-commons",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.10.1/2bfcd4a4e38b10c671b6916d7e543c20afe25579/junit-platform-commons-1.10.1.jar"
+                        },
+                        {
+                            "name": "junit-platform-commons",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.10.1/ba681bcc1df2c719bf3b8ddb297e65eadb9d7499/junit-platform-commons-1.10.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.antlr",
+                    "name": "ST4",
+                    "version": "4.3.4",
+                    "artifacts": [
+                        {
+                            "name": "ST4",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.antlr/ST4/4.3.4/7af4ede7ea41b2ea2022b185f963246efcb83217/ST4-4.3.4-sources.jar"
+                        },
+                        {
+                            "name": "ST4",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.antlr/ST4/4.3.4/bf68d049dd4e6e104055a79ac3bf9e6307d29258/ST4-4.3.4.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.opentest4j",
+                    "name": "opentest4j",
+                    "version": "1.3.0",
+                    "artifacts": [
+                        {
+                            "name": "opentest4j",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.opentest4j/opentest4j/1.3.0/afb8ff23cffb021c56f333953aebfe6e8818568e/opentest4j-1.3.0-sources.jar"
+                        },
+                        {
+                            "name": "opentest4j",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.opentest4j/opentest4j/1.3.0/152ea56b3a72f655d4fd677fc0ef2596c3dd5e6e/opentest4j-1.3.0.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-compiler-embeddable",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-compiler-embeddable",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/2.3.0/dfa7ae7e29f042fe2abf0708315aa367989bb07d/kotlin-compiler-embeddable-2.3.0.jar"
+                        },
+                        {
+                            "name": "kotlin-compiler-embeddable",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/2.3.0/5dcfdc4c926db8c4a196c6fcccf43abec858f1d1/kotlin-compiler-embeddable-2.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-daemon-client",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-daemon-client",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-client/2.3.0/2510f279208997188df6edffb589b21ee1e06822/kotlin-daemon-client-2.3.0.jar"
+                        },
+                        {
+                            "name": "kotlin-daemon-client",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-client/2.3.0/1ce83f8c4e2f6e98396b4ad1a03e64b542c7af35/kotlin-daemon-client-2.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-metadata-jvm",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-metadata-jvm",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-metadata-jvm/2.3.0/7758780509972cf8338f06649cc5e4b11acc14e/kotlin-metadata-jvm-2.3.0.jar"
+                        },
+                        {
+                            "name": "kotlin-metadata-jvm",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-metadata-jvm/2.3.0/9930ea3a9732fd81cf32f32d659935f4f6bb2977/kotlin-metadata-jvm-2.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-klib-abi-reader",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-klib-abi-reader",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-klib-abi-reader/2.3.0/21ff56c5a0ed1f4c55ff127ea015e211f4809c6d/kotlin-klib-abi-reader-2.3.0-sources.jar"
+                        },
+                        {
+                            "name": "kotlin-klib-abi-reader",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-klib-abi-reader/2.3.0/de123827aae5408afbb5107ac2e042e56d5cf968/kotlin-klib-abi-reader-2.3.0.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-scripting-common",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-scripting-common",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-common/2.3.0/e4a2702b09963b0191bb534f67c001130a889286/kotlin-scripting-common-2.3.0-sources.jar"
+                        },
+                        {
+                            "name": "kotlin-scripting-common",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-common/2.3.0/ed166c96b64d63647c7ee106da3a8a1c95596285/kotlin-scripting-common-2.3.0.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains",
+                    "name": "annotations",
+                    "version": "13.0",
+                    "artifacts": [
+                        {
+                            "name": "annotations",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/5991ca87ef1fb5544943d9abc5a9a37583fabe03/annotations-13.0-sources.jar"
+                        },
+                        {
+                            "name": "annotations",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-scripting-compiler-embeddable",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-scripting-compiler-embeddable",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-compiler-embeddable/2.3.0/8577ef50a777a86d45f31544948858abaa330243/kotlin-scripting-compiler-embeddable-2.3.0.jar"
+                        },
+                        {
+                            "name": "kotlin-scripting-compiler-embeddable",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-compiler-embeddable/2.3.0/4c467411991006bf63de9099acb3a7da34b1979c/kotlin-scripting-compiler-embeddable-2.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.antlr",
+                    "name": "antlr-runtime",
+                    "version": "3.5.3",
+                    "artifacts": [
+                        {
+                            "name": "antlr-runtime",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.antlr/antlr-runtime/3.5.3/9011fb189c5ed6d99e5f3322514848d1ec1e1416/antlr-runtime-3.5.3.jar"
+                        },
+                        {
+                            "name": "antlr-runtime",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.antlr/antlr-runtime/3.5.3/5dec145eac1c84b12e5aa1fc5444e5c02bcee16f/antlr-runtime-3.5.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.antlr",
+                    "name": "antlr4",
+                    "version": "4.13.1",
+                    "artifacts": [
+                        {
+                            "name": "antlr4",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4/4.13.1/35f88553646b79512b126ab5f884d12d82ef5772/antlr4-4.13.1-sources.jar"
+                        },
+                        {
+                            "name": "antlr4",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4/4.13.1/71b8e3e31b0821480a5db1486012caa89e673f41/antlr4-4.13.1.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.ibm.icu",
+                    "name": "icu4j",
+                    "version": "72.1",
+                    "artifacts": [
+                        {
+                            "name": "icu4j",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/com.ibm.icu/icu4j/72.1/21c9043b596850d5224f0bde047b91d188a7eac6/icu4j-72.1-sources.jar"
+                        },
+                        {
+                            "name": "icu4j",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/com.ibm.icu/icu4j/72.1/bc9057df4b5efddf7f6d1880bf7f3399f4ce5633/icu4j-72.1.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-test",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-test",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test/2.3.0/3ac782a403e250b595d236dc9e2a7b93d0a06dc/kotlin-test-2.3.0-sources.jar"
+                        },
+                        {
+                            "name": "kotlin-test",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test/2.3.0/9fcfeb336ceece33673ae00bbe04ebe34480146d/kotlin-test-2.3.0.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-build-tools-api",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-build-tools-api",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-build-tools-api/2.3.0/b79f8bfca02c3e301be00f52d1c1e85372360eb9/kotlin-build-tools-api-2.3.0-sources.jar"
+                        },
+                        {
+                            "name": "kotlin-build-tools-api",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-build-tools-api/2.3.0/7ffbfd5aface13641e9ff9b921e50287bad6ab7d/kotlin-build-tools-api-2.3.0.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.junit.platform",
+                    "name": "junit-platform-launcher",
+                    "version": "1.10.1",
+                    "artifacts": [
+                        {
+                            "name": "junit-platform-launcher",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-launcher/1.10.1/62c17608a285a6246ed1f6c8112eddd075c0a957/junit-platform-launcher-1.10.1-sources.jar"
+                        },
+                        {
+                            "name": "junit-platform-launcher",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-launcher/1.10.1/ce85bf5e38bee0989ded9bd468dd4ff78dc0cfa8/junit-platform-launcher-1.10.1.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "abi-tools",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "abi-tools",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/abi-tools/2.3.0/72ed356d6531a9ba7031e8ba5c1cdbf9edc0b0f9/abi-tools-2.3.0-sources.jar"
+                        },
+                        {
+                            "name": "abi-tools",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/abi-tools/2.3.0/ba2066ff01d47ce27a572b7f4b8baf654770cca7/abi-tools-2.3.0.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-stdlib",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-stdlib",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.3.0/ebc4eb2b6e6c91b6c844c1e3183920d86f2ef656/kotlin-stdlib-2.3.0.jar"
+                        },
+                        {
+                            "name": "kotlin-stdlib",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.3.0/7056b959f91689b8aaf9f1e018b010fc0c4b6f47/kotlin-stdlib-2.3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.junit.jupiter",
+                    "name": "junit-jupiter-engine",
+                    "version": "5.10.1",
+                    "artifacts": [
+                        {
+                            "name": "junit-jupiter-engine",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-engine/5.10.1/6c9ff773f9aa842b91d1f2fe4658973252ce2428/junit-jupiter-engine-5.10.1.jar"
+                        },
+                        {
+                            "name": "junit-jupiter-engine",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-engine/5.10.1/624f71a8d76185f2ac8d234c686bbdab0bd28ae0/junit-jupiter-engine-5.10.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.jetbrains.kotlin",
+                    "name": "kotlin-daemon-embeddable",
+                    "version": "2.3.0",
+                    "artifacts": [
+                        {
+                            "name": "kotlin-daemon-embeddable",
+                            "classifier": "sources",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-embeddable/2.3.0/15b42b8f883faf1243503264ceed0bfc3b989039/kotlin-daemon-embeddable-2.3.0-sources.jar"
+                        },
+                        {
+                            "name": "kotlin-daemon-embeddable",
+                            "path": "/home/arthurj/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-embeddable/2.3.0/3362fbd68a4dfd1df3818cfee0b8d5f4f6a7e35f/kotlin-daemon-embeddable-2.3.0.jar"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tags": [
+            "library"
+        ]
+    }
+}

@@ -28,6 +28,9 @@ kotlin {
 
 tasks.test {
     useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+    }
 }
 
 tasks.generateGrammarSource {

@@ -1,0 +1,33 @@
+program:[[30], [30], <EOF>]
+'            public class MiniProgram {
+X                public static void factorial(int n, Continuation<int> __continuation) {
+    if ((n <= 1)) {
+"        __continuation.accept(1);
+        return;
+    } else {
+'        factorial((n - 1), (arg0) -> {
+/            __continuation.accept((n * arg0));
+            return;
+        });
+    }
+}
+)public static void main(String[] args) {
+    factorial(5, (arg2) -> {
+        int result = arg2;
+,        Prelude.println(result, (arg1) -> {
+            int a = (10 + 5);
+            bool b = (a > 10);
++            Prelude.println(a, (arg0) -> {
+    
+            });
+        });
+    });
+}
+
+            }
+LFailure(errors=[CompilationError(line=2, column=66, message=unexpected type
+  required: reference
+R  found:    int), CompilationError(line=18, column=13, message=cannot find symbol
+  symbol:   class bool
+!  location: class MiniProgram)])
+null

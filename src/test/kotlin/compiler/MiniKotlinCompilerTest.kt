@@ -49,7 +49,10 @@ class MiniKotlinCompilerTest {
         val program = parseFile(examplePath)
 
         val compiler = MiniKotlinCompiler()
+        println("program:" + program.children)
         val javaCode = compiler.compile(program)
+
+        println(javaCode)
 
         val javaFile = tempDir.resolve("MiniProgram.java")
         Files.writeString(javaFile, javaCode)
@@ -58,6 +61,8 @@ class MiniKotlinCompilerTest {
         val stdlibPath = resolveStdlibPath()
         val (compilationResult, executionResult) = javaCompiler.compileAndExecute(javaFile, stdlibPath)
 
+        println(compilationResult)
+        println(executionResult)
         assertIs<CompilationResult.Success>(compilationResult)
         assertIs<ExecutionResult.Success>(executionResult)
 
